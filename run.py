@@ -15,8 +15,8 @@ SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT =gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('Trimester_Counter')
 
-length = SHEET.worksheet('length')
+from datetime import date
+d1 = date.today()
+print(d1.strftime("%W"))
 
-data = length.get_all_values()
-
-print(data)
+# Generate trimester counter-
