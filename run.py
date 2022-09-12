@@ -15,8 +15,13 @@ SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT =gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('Trimester_Counter')
 
-from datetime import date
-d1 = date.today()
-print(d1.strftime("%W"))
+def get_trimester_data():
+    """
+    Get trimester data. 
+    """
+    print("Please enter months pregnant.")
+    print("Data should be add as you progress through your weeks of pregnancy.")
+    print("Example: 1 month, 2 months, 3 months")
 
-# Generate trimester counter-
+    data_str = input("Enter your pregnancy month here:")
+    print(f"The data provided is (data_str)")
